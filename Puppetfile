@@ -59,3 +59,9 @@ github "xquartz",     "1.1.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+#github "gdal"
+
+github "python",      "1.1.1"
+github "postgresql",  "3.0.0"
+
+#github "postgis",     "3.0.0"
