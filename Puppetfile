@@ -59,9 +59,10 @@ github "xquartz",     "1.1.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
-#github "gdal"
 
-github "python",      "1.1.1"
+github "python",      "2.0.1", :repo => "mloberg/puppet-python" 
+github "osx",         "2.2.2", :repo => "boxen/puppet-osx"
+github "sysctl",      "1.0.1"
 github "postgresql",  "3.0.0"
-
-#github "postgis",     "3.0.0"
+github "zsh",         "1.0.0" 
+github "gdal",        "0.0.1", :repo => "scimusmn/puppet-gdal"

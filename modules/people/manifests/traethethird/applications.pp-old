@@ -1,0 +1,29 @@
+class people::traethethird::applications {
+    include postgresql
+    include gdal
+
+    include python
+    include python::virtualenvwrapper
+
+    python::mkvirtualenv { 'analysis':
+        project_dir => '/opt/boxen/data/virturalenvs',
+        require     => [ File[ '/opt/boxen/data/virturalenvs' ], File[ '/tmp/pip-build/virtualenvwrapper' ] ],
+        before      => Python::Pip[ 'numpy', 'pandas' ],
+    }
+
+	file { '/tmp/pip-build/virtualenvwrapper':
+        ensure => 'directory',
+    }
+
+    file { '/opt/boxen/data/virturalenvs':
+        ensure => 'directory',
+    }
+
+    python::pip { 'numpy':
+        virtualenv => "${python::config::venv_home}/analysis",
+    }
+
+    python::pip { 'pandas':
+        virtualenv => "${python::config::venv_home}/analysis",
+    }
+}

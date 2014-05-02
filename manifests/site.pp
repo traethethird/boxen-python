@@ -87,4 +87,47 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+
+  #include osx
+  include zsh
+
+  # Install Python versions
+  python::version { '2.7.6': }
+
+  # Set the global version of Python
+  class { 'python::global':
+    version => '2.7.6'
+  }
+
+  $version = '2.7.6'
+
+  python::package { "virtualenv for ${version}":
+    package => 'virtualenv',
+    python  => $version,
+  }
+
+  python::package { "virtualenvwrapper for ${version}":
+    package => 'virtualenvwrapper',
+    python  => $version,
+  }
+
+  python::package { "numpy for ${version}":
+    package => 'numpy',
+    python  => $version,
+  }
+
+  python::package { "pandas for ${version}":
+    package => 'pandas',
+    python  => $version,
+  }
+
+  python::package { "matplotlib for ${version}":
+    package => 'matplotlib',
+    python  => $version,
+  }
+
+  python::package { "scipy for ${version}":
+    package => 'scipy',
+    python  => $version,
+  }
 }

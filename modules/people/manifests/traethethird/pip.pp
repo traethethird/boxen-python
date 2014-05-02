@@ -1,0 +1,67 @@
+# == Define: pip
+#
+# Installs and manages packages from pip.
+#
+# === Parameters
+#
+# [*ensure*]
+#  present|absent. Default: present
+#
+# [*virtualenv*]
+#  virtualenv to run pip in.
+#
+# [*proxy*]
+#  Proxy server to use for outbound connections. Default: none
+#
+# === Examples
+#
+# pip { 'flask':
+#   virtualenv => '/var/www/project1',
+#   proxy      => 'http://proxy.domain.com:3128',
+# }
+#
+# === Authors
+#
+# Sergey Stankevich
+#
+# === Swiped from core boxen org puppet-python which didn't work, but I needed this functionality 
+#
+define pip (
+  $virtualenv,
+  $ensure = present,
+  $proxy  = false
+) {
+  require python
+
+  # Parameter validation
+  if ! $virtualenv {
+    fail('pip: virtualenv parameter must not be empty')
+  }
+
+  $proxy_flag = $proxy ? {
+    false    => '',
+    default  => "--proxy=${proxy}",
+  }
+
+  $grep_regex = $name ? {
+    /==/    => "^${name}\$",
+    default => "^${name}==",
+  }
+
+  case $ensure {
+    present: {
+      exec { "pip_install_${name}":
+        command => "${virtualenv}/bin/pip install ${proxy_flag} ${name}",
+        unless  => "${virtualenv}/bin/pip freeze | grep -i -e ${grep_regex}",
+      }
+    }
+
+    default: {
+      exec { "pip_uninstall_${name}":
+        command => "echo y | ${virtualenv}/bin/pip uninstall ${proxy_flag} ${name}",
+        onlyif  => "${virtualenv}/bin/pip freeze | grep -i -e ${grep_regex}",
+      }
+    }
+  }
+
+}
