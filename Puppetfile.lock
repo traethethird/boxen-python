@@ -31,7 +31,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
-    homebrew (1.6.2)
+    homebrew (1.9.2)
 
 GITHUBTARBALL
   remote: boxen/puppet-hub
@@ -64,6 +64,11 @@ GITHUBTARBALL
     pkgconfig (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-postgresql
+  specs:
+    postgresql (3.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-repository
   specs:
     repository (2.3.0)
@@ -79,9 +84,24 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-sysctl
+  specs:
+    sysctl (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-xquartz
   specs:
     xquartz (1.1.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-zsh
+  specs:
+    zsh (1.0.0)
+
+GITHUBTARBALL
+  remote: mloberg/puppet-python
+  specs:
+    python (2.0.1)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -98,14 +118,20 @@ GITHUBTARBALL
   specs:
     module-data (0.0.3)
 
+GITHUBTARBALL
+  remote: scimusmn/puppet-gdal
+  specs:
+    gdal (0.0.1)
+
 DEPENDENCIES
   boxen (= 3.4.2)
   dnsmasq (= 1.0.1)
   foreman (= 1.2.0)
   gcc (= 2.0.100)
+  gdal (= 0.0.1)
   git (= 2.3.0)
   go (= 1.1.0)
-  homebrew (= 1.6.2)
+  homebrew (= 1.9.2)
   hub (= 1.3.0)
   inifile (= 1.0.3)
   module-data (= 0.0.3)
@@ -114,9 +140,13 @@ DEPENDENCIES
   openssl (= 1.0.0)
   phantomjs (= 2.3.0)
   pkgconfig (= 1.0.0)
+  postgresql (= 3.0.0)
+  python (= 2.0.1)
   repository (= 2.3.0)
   ruby (= 7.3.0)
   stdlib (= 4.1.0)
   sudo (= 1.0.0)
+  sysctl (= 1.0.1)
   xquartz (= 1.1.1)
+  zsh (= 1.0.0)
 
