@@ -90,6 +90,7 @@ node default {
 
   #include osx
   include zsh
+  include ohmyzsh
 
   # Install Python versions
   python::version { '2.7.6': }

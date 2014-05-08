@@ -119,6 +119,11 @@ GITHUBTARBALL
     module-data (0.0.3)
 
 GITHUBTARBALL
+  remote: samjsharpe/puppet-ohmyzsh
+  specs:
+    ohmyzsh (1.0.0)
+
+GITHUBTARBALL
   remote: scimusmn/puppet-gdal
   specs:
     gdal (0.0.1)
@@ -137,6 +142,7 @@ DEPENDENCIES
   module-data (= 0.0.3)
   nginx (= 1.4.3)
   nodejs (= 3.7.0)
+  ohmyzsh (= 1.0.0)
   openssl (= 1.0.0)
   phantomjs (= 2.3.0)
   pkgconfig (= 1.0.0)
