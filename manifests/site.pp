@@ -88,7 +88,7 @@ node default {
     target => $boxen::config::repodir
   }
 
-  #include osx
+  include osx
   include zsh
   include ohmyzsh
 
