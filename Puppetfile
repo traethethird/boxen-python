@@ -61,7 +61,7 @@ github "xquartz",     "1.1.1"
 # https://github.com/boxen.
 
 github "python",      "2.0.1", :repo => "mloberg/puppet-python" 
-#github "osx",         "2.2.2", :repo => "boxen/puppet-osx"
+github "osx",         "2.5.0"
 github "sysctl",      "1.0.1"
 github "postgresql",  "3.0.0"
 github "zsh",         "1.0.0" 
